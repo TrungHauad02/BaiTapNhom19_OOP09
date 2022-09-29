@@ -4,14 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace VoLam_v1._0
+namespace VoLamTruyenKy
 {
     class Program
     {
-        public static void Main(string[] args)
+        static void Main()
         {
-            Console.WriteLine("Hello");
-            // Nhan vao bieu tuong cay but de edit code.
+            NhanVat a1 = new("Vo Dang", 5);
+            Console.WriteLine(a1.Atk());
         }
     }
 }
