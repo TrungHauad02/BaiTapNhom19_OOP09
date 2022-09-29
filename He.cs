@@ -15,41 +15,31 @@ namespace VoLamTruyenKy
         Hoa,    // 3
         Tho     // 4
     }
+
     class He
     {
         private Hanh hanh;
+        private string monPhai = ""; // Môn phái chỉ dành cho Nhân vật
+
+        public Hanh Hanh { get => hanh; set => hanh = value; }
+        public string MonPhai { get => monPhai; set => monPhai = value; }
+        
 
         public He(Hanh hanh)
         {
-            this.hanh = hanh;
+            Hanh = hanh;
         }
 
-        //public bool Sinh(He A)
-        //{
-        //    int temp = (int)hanh + 1;
-        //    if (temp > 4)
-        //        temp = 0;
-        //    if (temp == ().dinhDanh)
-        //        return true;
-        //    return false;
-        //}
+        ~He()
+        {
+        }
 
-        public virtual int Sinh()
+        public virtual object Sinh()
         {
             return 5;
         }
 
-        //public bool Khac(He A)
-        //{
-        //    int temp = (int)hanh + 2;
-        //    if (temp > 4)
-        //        temp = 1;
-        //    if (temp == A.dinhDanh)
-        //        return true;
-        //    return false;
-        //}
-
-        public virtual int Khac()
+        public virtual object Khac()
         {
             return 5;
         }
@@ -58,82 +48,132 @@ namespace VoLamTruyenKy
     class Kim : He
     {
         public Kim() : base(Hanh.Kim)
+        { 
+        }
+
+        public Kim(int monPhai) : base(Hanh.Kim)
+        {
+            MonPhai = monPhai == 0 ? "Thieu Lam"
+                    : "Thien Vuong bang";
+        }
+
+        ~Kim()
         {
         }
 
-        public override int Sinh()
+        public override object Sinh()
         {
-            return (int)Hanh.Thuy; // ép kiểu
+            return Hanh.Thuy; // ép kiểu
         }
 
-        public override int Khac()
+        public override object Khac()
         {
-            return (int)Hanh.Moc;
+            return Hanh.Moc;
         }
     }
 
     class Thuy : He
     {
         public Thuy() : base(Hanh.Thuy)
+        { 
+        }
+
+        public Thuy(int monPhai) : base(Hanh.Thuy)
+        {
+            MonPhai = monPhai == 0 ? "Nga My"
+                    : "Thuy Yen mon";
+        }
+
+        ~Thuy()
         {
         }
 
-        public override int Sinh()
+        public override object Sinh()
         {
-            return (int)Hanh.Moc;
+            return Hanh.Moc;
         }
-        public override int Khac()
+        public override object Khac()
         {
-            return (int)Hanh.Hoa;
+            return Hanh.Hoa;
         }
     }
     class Moc : He
     {
         public Moc() : base(Hanh.Moc)
+        { 
+        }
+
+        public Moc(int monPhai) : base(Hanh.Moc)
+        {
+            MonPhai = monPhai == 0 ? "Ngu Doc giao"
+                    : "Duong Mon";
+        }
+
+        ~Moc()
         {
         }
 
-        public override int Sinh()
+        public override object Sinh()
         {
-            return (int)Hanh.Hoa;
+            return Hanh.Hoa;
         }
-        public override int Khac()
+        public override object Khac()
         {
-            return (int)Hanh.Tho;
+            return Hanh.Tho;
         }
     }
 
     class Hoa : He
     {
         public Hoa() : base(Hanh.Hoa)
+        { 
+        }
+
+        public Hoa(int monPhai) : base(Hanh.Hoa)
+        {
+            MonPhai = monPhai == 0 ? "Cai Bang"
+                    : "Thien Nhan giao";
+        }
+
+        ~Hoa()
         {
         }
 
-        public override int Sinh()
+        public override object Sinh()
         {
-            return (int)Hanh.Tho;
+            return Hanh.Tho;
         }
 
-        public override int Khac()
+        public override object Khac()
         {
-            return (int)Hanh.Kim;
+            return Hanh.Kim;
         }
     }
 
     class Tho : He
     {
         public Tho() : base(Hanh.Tho)
+        { 
+        }
+
+        public Tho(int monPhai) : base(Hanh.Tho)
+        {
+            MonPhai = monPhai == 0 ? "Con Lon"
+                    : "Vo Dang";
+        }
+
+        ~Tho()
         {
         }
 
-        public override int Sinh()
+        public override object Sinh()
         {
-            return (int)Hanh.Kim;
+            return Hanh.Kim;
         }
 
-        public override int Khac()
+        public override object Khac()
         {
-            return (int)Hanh.Thuy;
+            return Hanh.Thuy;
         }
     }
 }
