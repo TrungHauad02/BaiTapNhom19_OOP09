@@ -8,11 +8,12 @@ namespace VoLamTruyenKy
 {
     enum Hanh
     {
-        Kim,
-        Moc,
-        Thuy,
-        Hoa,
-        Tho
+        // Thứ tự của ngũ hành được quy định theo đề bài
+        Kim,    // 0
+        Thuy,   // 1
+        Moc,    // 2
+        Hoa,    // 3
+        Tho     // 4
     }
     class He
     {
@@ -62,28 +63,12 @@ namespace VoLamTruyenKy
 
         public override int Sinh()
         {
-            return 1;
+            return (int)Hanh.Thuy; // ép kiểu
         }
 
         public override int Khac()
         {
-            return 2;
-        }
-    }
-
-    class Moc : He
-    {
-        public Moc() : base(Hanh.Moc)
-        {
-        }
-
-        public override int Sinh()
-        {
-            return 3;
-        }
-        public override int Khac()
-        {
-            return 4;
+            return (int)Hanh.Moc;
         }
     }
 
@@ -95,11 +80,26 @@ namespace VoLamTruyenKy
 
         public override int Sinh()
         {
-            return 2;
+            return (int)Hanh.Moc;
         }
         public override int Khac()
         {
-            return 3;
+            return (int)Hanh.Hoa;
+        }
+    }
+    class Moc : He
+    {
+        public Moc() : base(Hanh.Moc)
+        {
+        }
+
+        public override int Sinh()
+        {
+            return (int)Hanh.Hoa;
+        }
+        public override int Khac()
+        {
+            return (int)Hanh.Tho;
         }
     }
 
@@ -111,12 +111,12 @@ namespace VoLamTruyenKy
 
         public override int Sinh()
         {
-            return 4;
+            return (int)Hanh.Tho;
         }
 
         public override int Khac()
         {
-            return 0;
+            return (int)Hanh.Kim;
         }
     }
 
@@ -128,12 +128,12 @@ namespace VoLamTruyenKy
 
         public override int Sinh()
         {
-            return 0;
+            return (int)Hanh.Kim;
         }
 
         public override int Khac()
         {
-            return 1;
+            return (int)Hanh.Thuy;
         }
     }
 }
