@@ -11,6 +11,7 @@ namespace VoLam_v1._0
         public static void Main(string[] args)
         {
             Console.WriteLine("Hello");
+            // Nhan vao bieu tuong cay but de edit code.
         }
     }
 }
