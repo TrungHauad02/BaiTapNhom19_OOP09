@@ -10,8 +10,10 @@ namespace VoLamTruyenKy
     {
         static void Main()
         {
-            NhanVat a1 = new("Vo Dang", 5);
-            Console.WriteLine(a1.Atk());
+            NguoiChoi a1 = new NhanVat("Test000", 15, 0, 1); // cấp 15 hệ Kim phái Thiếu Lâm
+            NguoiChoi a2 = new NhanVat("Test001", 10, 4, 1);
+            Console.WriteLine(a1.He.MonPhai);
+            Console.WriteLine(NguoiChoi.SatThuong(a1, a2));
         }
     }
 }
