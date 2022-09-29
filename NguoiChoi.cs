@@ -57,7 +57,12 @@ namespace VoLamTruyenKy
                 return (double)A.Atk() * 120 / 100 - B.Atk();
             }
 
-            else return (double)A.Atk() * 80 / 100 - B.Atk();
+            if (A.He.Hanh.Equals(B.He.Khac()))
+            {
+                return (double)A.Atk() * 80 / 100 - B.Atk();
+            }
+
+            else return A.Atk() - B.Atk();
         }
     }
 
