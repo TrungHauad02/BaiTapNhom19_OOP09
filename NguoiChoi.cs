@@ -1,6 +1,7 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Net.Security;
 using System.Text;
 using System.Threading.Tasks;
@@ -45,6 +46,11 @@ namespace VoLamTruyenKy
             return 0;
         }
 
+        public virtual void Xuat()
+        {
+            return;
+        }
+
         public static double SatThuong(NguoiChoi A, NguoiChoi B)
         {
             if (A.He.Sinh().Equals(B.He.Hanh))
@@ -69,16 +75,24 @@ namespace VoLamTruyenKy
     class NhanVat : NguoiChoi
     {
         private string name;
-
         public string Name { get => name; set => name = value; }
 
         public NhanVat(string name, int level, int he, int monPhai) : base(level, he, monPhai)
         {
             this.name = name;
+            
         }
 
         ~NhanVat()
         {
+        }
+
+        public override void Xuat()
+        {                        
+            Console.WriteLine("Ten nhan vat: " + name);
+            Console.WriteLine("Level: " + Level);
+            Console.WriteLine("He: " + He.Hanh);
+            Console.WriteLine("Mon phai: " + He.MonPhai);
         }
 
         public override int Atk()
@@ -95,7 +109,7 @@ namespace VoLamTruyenKy
 
         ~QuaiVat()
         { 
-        }
+        }        
 
     }
 
@@ -107,6 +121,13 @@ namespace VoLamTruyenKy
 
         ~QuaiThuong()
         { 
+        }
+
+        public override void Xuat()
+        {
+            Console.WriteLine("Quai thuong");
+            Console.WriteLine("Level quai: " + Level);
+            Console.WriteLine("He quai: " + He.Hanh);
         }
 
         public override int Atk()
@@ -128,6 +149,13 @@ namespace VoLamTruyenKy
         public override int Atk()
         {
             return Level * 7;
+        }
+
+        public override void Xuat()
+        {
+            Console.WriteLine("Quai thu linh");
+            Console.WriteLine("Level quai: " + Level);
+            Console.WriteLine("He quai: " + He.Hanh);
         }
     }
 }
