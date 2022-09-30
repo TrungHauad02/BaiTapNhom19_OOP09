@@ -36,7 +36,7 @@ namespace VoLamTruyenKy
                : he == 3 ? new Hoa(monPhai)
                : new Tho(monPhai);
         }
-
+        public NguoiChoi() { }
         ~NguoiChoi()
         { 
         }
@@ -125,7 +125,6 @@ namespace VoLamTruyenKy
 
         public override void Xuat()
         {
-            Console.WriteLine("Quai thuong");
             Console.WriteLine("Level quai: " + Level);
             Console.WriteLine("He quai: " + He.Hanh);
         }
@@ -153,7 +152,6 @@ namespace VoLamTruyenKy
 
         public override void Xuat()
         {
-            Console.WriteLine("Quai thu linh");
             Console.WriteLine("Level quai: " + Level);
             Console.WriteLine("He quai: " + He.Hanh);
         }
