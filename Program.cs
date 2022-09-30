@@ -1,8 +1,10 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+
+using VoLam_v1._0; // Them gameplay 
 
 namespace VoLamTruyenKy
 {
@@ -10,10 +12,21 @@ namespace VoLamTruyenKy
     {
         static void Main()
         {
-            NguoiChoi a1 = new NhanVat("Test000", 15, 0, 1); // cấp 15 hệ Kim phái Thiếu Lâm
-            NguoiChoi a2 = new NhanVat("Test001", 10, 4, 1);
-            Console.WriteLine(a1.He.MonPhai);
-            Console.WriteLine(NguoiChoi.SatThuong(a1, a2));
+            DanhSachNhanVat NV = new DanhSachNhanVat(5);
+            NV.xuatDS();
+            NV.STCaoNhat().Xuat();
+
+            DanhSachQuaiThuong QT = new DanhSachQuaiThuong(6);
+            QT.xuatDS();
+            QT.STCaoNhat().Xuat();
+
+            DanhSachQuaiThuLinh QTL = new DanhSachQuaiThuLinh(7);
+            QTL.xuatDS();
+            QTL.STCaoNhat().Xuat();
+
+            double st = NguoiChoi.SatThuong(NV.DSNHANVAT[0], QT.DSQUAITHUONG[2]);
+            Console.WriteLine(st);
+
         }
     }
 }
